@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "express": "^5.1.0",
-    "mysql": "^2.18.1",
-    "node-cors": "^1.0.0"
-  }
-}
