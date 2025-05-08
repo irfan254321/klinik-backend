@@ -1,10 +1,11 @@
 const cors = require("cors")
 const express = require("express")
+const mysql = require("mysql")
 
-global.app = express
+global.app = express()
 
-global.app = require("knex")({
-    client : mysql,
+global.knex = require("knex")({
+    client : "mysql",
     connection : {
         host : 'localhost',
         user : 'root',
@@ -14,9 +15,10 @@ global.app = require("knex")({
 })
 
 
-app.use(express())
 app.use(cors())
+app.use(express.json())
 
-require("")
+
+require("./moduls/tes")
 
 app.listen(3000)
