@@ -1,16 +1,17 @@
 const cors = require("cors")
 const express = require("express")
 const mysql = require("mysql")
+require("dotenv").config()
 
 global.app = express()
 
 global.knex = require("knex")({
     client : "mysql",
     connection : {
-        host : 'localhost',
-        user : 'root',
-        password : '',
-        database : 'klinik'
+        host : process.env.host,
+        user : process.env.user,
+        password : process.env.password,
+        database : process.env.database
     }
 })
 
@@ -18,7 +19,7 @@ global.knex = require("knex")({
 app.use(cors())
 app.use(express.json())
 
+require("./moduls/login")
+require("./moduls/queue")
 
-require("./moduls/tes")
-
-app.listen(3000)
+app.listen(3001)
