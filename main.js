@@ -21,5 +21,6 @@ app.use(express.json())
 
 require("./moduls/login")
 require("./moduls/queue")
+require("./moduls/patient")
 
 app.listen(3001)
