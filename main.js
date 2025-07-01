@@ -1,7 +1,9 @@
 const cors = require("cors")
 const express = require("express")
 const mysql = require("mysql")
-require("dotenv").config()
+const jwebtoken = require("jsonwebtoken")
+require('dotenv').config()
+
 
 global.app = express()
 
@@ -22,5 +24,6 @@ app.use(express.json())
 require("./moduls/login")
 require("./moduls/queue")
 require("./moduls/patient")
+require("./moduls/cobatoken")
 
-app.listen(3001)
+app.listen(3002)
